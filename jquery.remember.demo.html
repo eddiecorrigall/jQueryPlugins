@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js"></script>
+		<script src="jquery.remember.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("form").rememberForm();
+			});
+		</script>
+	</head>
+	<body>
+		<ol>
+			<li>Change the value of the message box below.</li>
+			<li>Load this demo in a new window. The message box will be identical.</li>
+			<li>Don't believe me? Do it again! Try refreshing the page too.</li>
+		</ol>
+		<hr />
+		<form>
+			<label for="message">Message</form>
+			<input type="text" name="message" />
+		</form>
+	</body>
+</html>
