@@ -1,5 +1,6 @@
 /* REQUIRES:
- * 	jQuery jquery.cookie.js
+ *	jquery.js
+ * 	jquery.cookie.js
  *
  * USE:
  * 	$(document).ready(function() {
@@ -9,10 +10,10 @@
 
 (function($) {
 
-	$.fn.rememberForm = function() {
+	$.fn.rememberForm = function(days) {
 
 		// Set default values
-		days = 365;
+		days = days || 365;
 
 		// Obtain the selected object
 		formSelector = $(this);
@@ -32,12 +33,11 @@
 
 				// Obtain the input object and name
 				inputElement = $(this);
-				inputName = inputElement.attr("name");
+				inputName = inputElement.attr("name") || '';
 
-				// Validate input name, it must exist!
-				if (typeof inputName == 'undefined') return; // aka continue
+				// Input name attribute must be defined
 				if (inputName.length == 0) return; // aka continue
-				
+
 				// Build a key to store in cookies
 				key = (formName.length > 0)
 					? (formName + '.' + inputName)
