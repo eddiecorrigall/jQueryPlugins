@@ -18,12 +18,12 @@
 		// Obtain the selected object
 		formSelector = $(this);
 
-		// Ignore if the element type was not a form
-		if (formSelector.is("form") == false) return this;
-
 		// For each child form element in the form(s)...
 		$(formSelector).each(function() {
-		
+
+			// Ignore if the element type was not a form
+			if (formSelector.is("form") == false) return;
+
 			// Obtain the form object and name
 			formElement = $(this);
 			formName = formElement.attr("name") || '';
