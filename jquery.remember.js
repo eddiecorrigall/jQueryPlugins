@@ -18,7 +18,7 @@
 		// Obtain the selected object
 		formSelector = $(this);
 
-		// For each child form element in the form(s)...
+		// For each form element in selector...
 		$(formSelector).each(function() {
 
 			// Ignore if the element type was not a form
