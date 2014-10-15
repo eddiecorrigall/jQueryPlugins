@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="jquery.iterator.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				tableSelector = $("#mytable");
+				
+				// Apply custom styles
+				tableSelector.iterateTable(function(row_index, row, fields) {
+					if (row_index %= 2) {
+						row.css({ 'background-color' : '#EEE' });
+					}
+				});
+
+				// Find specific values
+				tableSelector.iterateTable(function(row_index, row, fields) {
+
+					nameElement = fields['Name'] || false;
+					if (nameElement == false) return; // aka continue
+
+					favouriteIcecreamElement = fields['Favourite Icecream'] || false;
+					if (favouriteIcecreamElement == false) return; // aka continue
+
+					favouriteIcecream = favouriteIcecreamElement.text() || false;
+					if (favouriteIcecream == false) return; // aka continue
+					
+					if (favouriteIcecream.toLowerCase() != 'chocolate') return; // aka continue
+
+					nameElement.css({ 'font-weight' : 'bold' });
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<b>Examples</b>
+		<ul>
+			<li>Apply a custom style on oscillating rows to colour the even rows grey.</li>
+			<li>Search a field for a specific value and bold the name of the person whos favourite icecream is chocolate.</li>
+		</ul>
+		<hr />
+		<table id="mytable">
+			<tr>
+				<th>Name</th>
+				<th>Favourite Icecream</th>
+			</tr>
+			<tr>
+				<td>Eddie</td>
+				<td>Mango</td>
+			</tr>
+			<tr>
+				<td>Rob</td>
+				<td>Chocolate</td>
+			</tr>
+			<tr>
+				<td>Merri</td>
+				<td>Red Bean</td>
+			</tr>
+			<tr>
+				<td>Leigh</td>
+				<td>Vanilla</td>
+			</tr>
+		</table>
+	</body>
+</html>
