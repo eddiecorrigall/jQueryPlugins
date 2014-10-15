@@ -1,4 +1,5 @@
-# jQueryPlugins
+jQueryPlugin
+============
 
 Simple but useful plugins.
 
@@ -6,7 +7,9 @@ Simple but useful plugins.
 
 Useful for keeping persistent form input. For example, an email address or a name should be stored in cookies so the values do not need to be retyped later.
 
-### Requirements
+Additional Requirements:
+  * jquery.cookie.js
 
-* jquery.js
-* jquery.cookie.js
+## Plugin jquery.iterator.js
+
+Iterator for traversing html objects. Currently supports table iteration.
