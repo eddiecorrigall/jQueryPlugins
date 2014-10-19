@@ -2,15 +2,15 @@
 
 	$.deparam = function(url) { // Counterpart of $.param
 	
-		var parameters = {};
-		
-		var searchQueryIndex = url.indexOf('?');
+		searchQueryIndex = url.indexOf('?');
 		
 		if (searchQueryIndex < 0) {
-			return "";
+			return {};
 		}
 		
-		var searchQuery = url.substr(searchQueryIndex + 1);
+		searchQuery = url.substr(searchQueryIndex + 1);
+		
+		var parameters = {};
 		
 		$.each(searchQuery.split('&'), function(index, parameter) {
 			
