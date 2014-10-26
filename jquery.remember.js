@@ -16,30 +16,30 @@
 		days = days || 365;
 
 		// Obtain the selected object
-		formSelector = $(this);
+		var formSelector = $(this);
+
+		// Ignore if the element type was not a form
+		if (formSelector.is("form") == false) return;
 
 		// For each form element in selector...
 		$(formSelector).each(function() {
 
-			// Ignore if the element type was not a form
-			if (formSelector.is("form") == false) return;
-
 			// Obtain the form object and name
-			formElement = $(this);
-			formName = formElement.attr("name") || '';
+			var formElement = $(this);
+			var formName = formElement.attr("name") || '';
 
 			// For each child input element of the form...
 			$(":input", formElement).each(function() {
 
 				// Obtain the input object and name
-				inputElement = $(this);
-				inputName = inputElement.attr("name") || '';
+				var inputElement = $(this);
+				var inputName = inputElement.attr("name") || '';
 
 				// Input name attribute must be defined
 				if (inputName.length == 0) return; // aka continue
 
 				// Build a key to store in cookies
-				key = (formName.length > 0)
+				var key = (formName.length > 0)
 					? (formName + '.' + inputName)
 					: inputName;
 				
