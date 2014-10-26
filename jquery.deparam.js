@@ -2,13 +2,9 @@
 
 	$.deparam = function(url) { // Counterpart of $.param
 	
-		searchQueryIndex = url.indexOf('?');
-		
-		if (searchQueryIndex < 0) {
-			return {};
-		}
-		
-		searchQuery = url.substr(searchQueryIndex + 1);
+		var searchQueryIndex = url.indexOf('?');
+		if (searchQueryIndex < 0) return {};
+		var searchQuery = url.substr(searchQueryIndex + 1);
 		
 		var parameters = {};
 		
