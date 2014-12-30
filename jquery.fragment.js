@@ -8,7 +8,7 @@
 			return url.substr(fragmentIndex + 1);
 		}
 
-		return false;
+		return "";
 	};
 
 }(jQuery));
