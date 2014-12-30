@@ -16,8 +16,8 @@
 			
 			var scrollPane = $(this);
 
-			var scrollX = target.offset().left + scrollPane.scrollLeft() + parseInt(offsetLeft);
-			var scrollY = target.offset().top + scrollPane.scrollTop() + parseInt(offsetTop);
+			var scrollX = target.offset().left + scrollPane.scrollLeft() + parseInt(settings.offsetLeft);
+			var scrollY = target.offset().top + scrollPane.scrollTop() + parseInt(settings.offsetTop);
 
 			scrollPane.animate({
 					scrollLeft:	scrollX,
