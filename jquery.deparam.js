@@ -1,6 +1,9 @@
 (function ($) {
 
-	$.deparam = function(url) { // Counterpart of $.param
+	// Extract parameters from url
+	// Counterpart of $.param
+	// Returns a Dictionary of key-value-pairs
+	$.deparam = function(url) {
 	
 		var searchQueryIndex = url.indexOf('?');
 		if (searchQueryIndex < 0) return {};
@@ -28,6 +31,19 @@
 		});
 		
 		return parameters;
+	};
+
+	// Extract the fragment from url
+	// Returns a String
+	$.fragment = function(url) {
+		
+		var fragmentIndex = url.indexOf('#');
+		
+		if (0 < fragmentIndex) {
+			return url.substr(fragmentIndex + 1);
+		}
+
+		return "";
 	};
 	
 }(jQuery));
